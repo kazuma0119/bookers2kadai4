@@ -1,3 +1,4 @@
 class UsersController < ApplicationController
-  has_many :books, dependent: :destroy
+  def index
+  end
 end
