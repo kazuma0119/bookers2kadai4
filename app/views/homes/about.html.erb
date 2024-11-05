@@ -1,1 +1,23 @@
-<h1>welcome to about</h1>
+<!DOCTYPE html>
+<html lang="ja">
+
+ <head>
+    <title>bookers2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!下の部分は消しちゃダメ！>
+    <script src="https://kit.fontawesome.com/f0e983ff20.js" crossorigin="anonymous"></script>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+ </head>
+ <body>
+   <p id="notice"></p>
+   <div class="container">
+     <div class="row">
+       <div class="mx-auto px-3">
+         <h1>Welcome to <i class="fa-solid fa-book"></i><strong>Bookers!</strong></h1>
+       </div>
+     </div>
+   </div>
+ </body>
