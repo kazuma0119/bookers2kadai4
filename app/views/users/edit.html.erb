@@ -17,18 +17,28 @@
    <div class="container">
      <div class="row">
        <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-         <h2>User info</h2>info
-         <div class="field">
-           <%= f.label :name %><br>
-           <%= f.text_field :name %>
-         </div>
-         <h4>Image</h4>
-           <%= f.file_field :image %>
+         <h2>User info</h2>
+        <div class="form-group">
+        <%= form_with model: @user do |f| %>
+          <div class="field">
+           <label for="user_name">Name</label><br>
+        <%= f.text_field :name %>
+          </div>
 
+          <div class="field">
+           <label for="user_image">Image</label><br>
+        <%= f.file_field :image, placeholder: "プロフィール画像", accept: "image/*" %>
+          </div>
 
-           <%= f.submit '投稿' %>
+          <div class="field">
+           <label for="user_introduction">Introduction</label></label><br>
+           <%= f.text_area :introduction %>
+          </div>
 
-       </div>
+        <%= f.submit 'Update User', class:"btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
      </div>
    </div>
  </body>
