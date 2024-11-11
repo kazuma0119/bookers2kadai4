@@ -15,11 +15,10 @@
  <body>
      <p id="notice"></p>
    <div class="container">
-     <div class="mx-auto col-11 col-sm-10 col-lg-8 col-xl-6">
-       <div class="btn-wraper col-10 mx-auto">
-         <div class="row">
+        <div class="row">
+     <div class="mx-auto col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
            <h1>Editing Book</h1>
-            <div class="form-group">
+          <div class="form-group">
         <%= form_with model: @book do |f| %>
           <div class="field">
            <label for="book_title">Title</label><br>
@@ -34,8 +33,16 @@
         <%= f.submit 'Update Book', class:"btn btn-success" %>
         <% end %>
       </div>
-         </div>
+      <div class="link-item d-flex">
+          <%= link_to book_path(@book.id), class:"nav-link text-blue" do %>
+          Show
+          <% end %>
+          <div class="letter">|</div>
+          <%= link_to books_path, class:"nav-link text-blue" do %>
+          Back
+          <% end %>
       </div>
+        </div>
      </div>
    </div>
  </body>
