@@ -1,31 +1,17 @@
-<!DOCTYPE html>
-<html lang="ja">
-
- <head>
-    <title>bookers2</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<!下の部分は消しちゃダメ！>
-    <script src="https://kit.fontawesome.com/f0e983ff20.js" crossorigin="anonymous"></script>
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
- </head>
-
  <body>
-   <% if @book.errors.any? %>
-  <%= @book.errors.count %>件のエラーが発生しました
-  <ul>
-    <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
      <p id="notice"></p>
    <div class="container">
         <div class="row">
      <div class="mx-auto col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0">
            <h1>Editing Book</h1>
+  　　　     <% if @book.errors.any? %>
+       <h3><%= pluralize(@book.errors.count, "error") %> prohibited this obj from being saved:</h3>
+       <ul>
+          <% @book.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+          <% end %>
+          </ul>
+          <% end %>
           <div class="form-group">
         <%= form_with model: @book do |f| %>
           <div class="field">
