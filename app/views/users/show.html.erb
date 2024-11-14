@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-
- <head>
-    <title>bookers2</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<!下の部分は消しちゃダメ！>
-    <script src="https://kit.fontawesome.com/f0e983ff20.js" crossorigin="anonymous"></script>
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
- </head>
-
-<main>
-  <% flash.each do |message_type, message| %>
+<% flash.each do |message_type, message| %>
   <%= content_tag :div, message, class: message_type %>
 <% end %>
   <p id="notice"></p>
@@ -52,4 +37,3 @@
     </table>
   </div>
   </div>
-</main>
