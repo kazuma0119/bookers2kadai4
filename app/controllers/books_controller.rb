@@ -18,6 +18,8 @@ class BooksController < ApplicationController
     @newbook = Book.new
     @books = Book.all
     @users = User.all
+    @post_comments = @book.post_comments
+    @post_comment = PostComment.new
   end
   def create
     @book = Book.new(book_params)
